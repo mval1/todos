@@ -33,7 +33,7 @@ export default function RootLayout({
 					enableSystem
 					disableTransitionOnChange>
 					<Provider>
-						<main className="max-w-xl mx-auto mt-10">
+						<main className="max-w-xl mx-auto mt-10 p-2">
 							<div className="flex justify-center my-8">
 								<h1 className="font-thin">todos</h1>
 							</div>

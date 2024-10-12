@@ -85,7 +85,7 @@ describe('example to-do app', () => {
 		cy.get('#todo-list li').eq(1).should('have.text', 'Прекрасный код');
 		cy.get('#todo-list li').eq(2).should('have.text', 'Текстовое задание');
 
-		cy.get('#todo-footer').find('button').eq(2).click();
+		cy.get('#todo-footer').find('button').first().click();
 
 		cy.get('#todo-list li').eq(0).should('have.text', 'Текстовое задание');
 		cy.get('#todo-list li').eq(1).should('have.text', 'Прекрасный код');

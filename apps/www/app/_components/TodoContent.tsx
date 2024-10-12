@@ -1,14 +1,14 @@
 import { useAtom } from 'jotai';
-import { todosAtom, sortAscAtom } from '@/lib/atoms';
+import { todosAtom } from '@/lib/atoms';
 import TodoItem from './TodoItem';
 
 interface TodoContentProps {
 	filter: string;
+	sort: string;
 }
 
-const TodoList = ({ filter }: TodoContentProps) => {
+const TodoList = ({ filter, sort }: TodoContentProps) => {
 	const [todos] = useAtom(todosAtom);
-	const [sort] = useAtom(sortAscAtom);
 
 	const sortedTodos = todos
 		.filter((todo) => {
@@ -17,7 +17,7 @@ const TodoList = ({ filter }: TodoContentProps) => {
 			return true; // 'all' case
 		})
 		.sort((a, b) => {
-			const [_a, _b] = sort ? [a, b] : [b, a];
+			const [_a, _b] = sort === 'asc' ? [a, b] : [b, a];
 			return new Date(_a.id).getTime() - new Date(_b.id).getTime();
 		});
 

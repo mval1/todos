@@ -9,12 +9,13 @@ export default function Page() {
 
 	// Получение фильтра из query параметров
 	const filter = searchParams.get('filter') || 'all';
+	const sort = searchParams.get('sort') || 'desc';
 
 	return (
 		<div className="todo_container flex flex-col rounded-lg border	background bg-card text-card-foreground shadow-sm">
 			<TodoHeader filter={filter} />
-			<TodoContent filter={filter} />
-			<TodoFooter filter={filter} />
+			<TodoContent filter={filter} sort={sort} />
+			<TodoFooter filter={filter} sort={sort} />
 		</div>
 	);
 }
