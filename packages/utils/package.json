@@ -1,0 +1,26 @@
+{
+	"name": "@todos/utils",
+	"version": "0.1.0",
+	"description": "Utils lib for ui components",
+	"license": "MIT",
+	"private": true,
+	"files": [
+		"dist"
+	],
+	"main": "src/index.ts",
+	"types": "src/index.ts",
+	"scripts": {
+		"test": "yarn g:env TEST_ENV=web yarn g:jest --verbose false",
+		"test:coverage": "yarn g:rimraf coverage && yarn run test --coverage"
+	},
+	"peerDependencies": {
+		"react": ">=18.0.0"
+	},
+	"dependencies": {
+		"clsx": "^2.1.1",
+		"tailwind-merge": "^2.5.2"
+	},
+	"devDependencies": {
+		"@types/node": "^22.5.5"
+	}
+}
